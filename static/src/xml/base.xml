@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-extend="UserMenu">
+        <t t-jquery="div.dropdown-menu" t-operation="replace">
+            <div class="col-lg-12">
+                <div class="dropdown-menu dropdown-menu-right" role="menu"></div>
+            </div>
+        </t>
+    </t>
+
+    <t t-extend="UserMenu.Actions">
+        <t t-jquery="a" t-operation="replace"></t>
+        <t t-jquery="div" t-operation="replace">
+            <t t-if="session.is_system">
+                <a role="menuitem" href="#" data-menu="documentation" class="dropdown-item">Documentation</a>
+                <a role="menuitem" href="#" data-menu="support" class="dropdown-item">Support</a>
+                <a role="menuitem" href="#" data-menu="shortcuts" class="dropdown-item d-none d-md-inline-block">Shortcuts</a>
+                <div role="separator" class="dropdown-divider"/>
+                <a role="menuitem" href="#" data-menu="account" class="dropdown-item">My Odoo.com account</a>
+            </t>
+            <a role="menuitem" href="#" data-menu="settings" class="dropdown-item">Preferences</a>
+            <a role="menuitem" href="#" data-menu="logout" class="dropdown-item">Log out</a>
+        </t>
+    </t>
+
+</templates>
